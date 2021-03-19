@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>대우학교 1반 성적표</title>
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+    <div id="app">
+        <h1>대우학교 1반성적표</h1>
+        <div class="btn_wrap">
+            <button type="button" v-on:click="pushData">추가</button>
+            <button type="button" v-on:click="popData">삭제</button>
+        </div>
+        <table>
+            <tr>
+                <th>출석번호</th>
+                <th>이름</th>
+                <th>성별</th>
+                <th>국어</th>
+                <th>국사</th>
+                <th>수학</th>
+                <th>영어</th>
+                <th>화학</th>
+            </tr>
+            <tr v-for="(person, index) in group" v-bind:key="index">
+                <td> {{ index + 1 }}</td>
+                <td> {{ person.name }}</td>
+                <td> {{ person.gender }}</td>
+                <td> {{ person.koreanScore }}</td>
+                <td> {{ person.nhScore }}</td>
+                <td> {{ person.mathScore }}</td>
+                <td> {{ person.engScore }}</td>
+                <td> {{ person.cheScore }}</td>
+            </tr>
+        </table>
+    </div>
+
+    <script src="./js/vue.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>
